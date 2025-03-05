@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c305axxkgb1wl"]
+
+[ext_resource type="Script" path="res://Scripts/Notes/GreenNote.gd" id="1_v26jf"]
+[ext_resource type="Texture2D" uid="uid://b26c7ej10hpr4" path="res://Sprites/Monsters/monsters.png" id="2_qrb8p"]
+
+[node name="GreenNote" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_v26jf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qrb8p")
+hframes = 12
+vframes = 13
+frame = 2

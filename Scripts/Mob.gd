@@ -10,14 +10,12 @@ func _ready():
 	animation_sprite.speed_scale = JsonParser.midi_bpm / 60 * 2
 
 
-func _unhandled_input(event):
+func attack(_note_type: GameManager.NOTE_TYPES):
 	pass
 
 
-func attack():
-	animation_sprite.play("Attack1")
-	await animation_sprite.animation_finished
-	animation_sprite.play("Idle")
+func hurt():
+	pass
 
 
 func _on_whole_note_emitted():

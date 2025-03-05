@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bcwe6w0nd1gpk"]
+[gd_scene load_steps=28 format=3 uid="uid://bcwe6w0nd1gpk"]
 
 [ext_resource type="PackedScene" uid="uid://bl1m1nm1n1237" path="res://Scenes/Mob.tscn" id="1_eftjt"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_omv3v"]
@@ -17,9 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://br61lewmgxb5w" path="res://Sprites/Individual Sprites/adventurer-attack2-03.png" id="11_iiwkh"]
 [ext_resource type="Texture2D" uid="uid://fmn7shfp42wt" path="res://Sprites/Individual Sprites/adventurer-attack2-04.png" id="12_rqkcd"]
 [ext_resource type="Texture2D" uid="uid://bts85xqs2juvt" path="res://Sprites/Individual Sprites/adventurer-attack2-05.png" id="13_vnee7"]
+[ext_resource type="Texture2D" uid="uid://bv1ikoj1ox65d" path="res://Sprites/Individual Sprites/adventurer-attack3-00.png" id="14_0tjvm"]
 [ext_resource type="Texture2D" uid="uid://dvlllfsphvpej" path="res://Sprites/Individual Sprites/adventurer-hurt-00.png" id="14_pv5x1"]
+[ext_resource type="Texture2D" uid="uid://b242ukoqyv804" path="res://Sprites/Individual Sprites/adventurer-attack3-01.png" id="15_dl74h"]
 [ext_resource type="Texture2D" uid="uid://cfpjmyi4g7b61" path="res://Sprites/Individual Sprites/adventurer-hurt-01.png" id="15_f8trj"]
+[ext_resource type="Texture2D" uid="uid://c1cei0fi2dvvb" path="res://Sprites/Individual Sprites/adventurer-attack3-02.png" id="16_1xtv1"]
 [ext_resource type="Texture2D" uid="uid://wpfob86tjjoy" path="res://Sprites/Individual Sprites/adventurer-hurt-02.png" id="16_ohjyr"]
+[ext_resource type="Texture2D" uid="uid://b5vylgarxdfqj" path="res://Sprites/Individual Sprites/adventurer-attack3-03.png" id="17_4tog5"]
+[ext_resource type="Texture2D" uid="uid://tcg8g7u3wogs" path="res://Sprites/Individual Sprites/adventurer-attack3-04.png" id="18_atbof"]
+[ext_resource type="Texture2D" uid="uid://ergdmh4s71t8" path="res://Sprites/Individual Sprites/adventurer-attack3-05.png" id="19_p7dx7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xm2gn"]
 resource_local_to_scene = true
@@ -63,8 +69,31 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_vnee7")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_0tjvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dl74h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1xtv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4tog5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_atbof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_p7dx7")
+}],
+"loop": false,
+"name": &"Attack3",
 "speed": 5.0
 }, {
 "frames": [{
@@ -105,4 +134,4 @@ script = ExtResource("2_omv3v")
 [node name="AnimatedSprite2D" parent="." index="2"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xm2gn")
-animation = &"Hurt"
+animation = &"Attack3"

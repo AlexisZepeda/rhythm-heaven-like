@@ -1,101 +1,136 @@
 {
   "header": {
-    "PPQ": 96,
-    "bpm": 167.99993280002687,
-    "timeSignature": [
-      4,
-      4
-    ],
-    "name": ""
+	"PPQ": 96,
+	"bpm": 167.99993280002687,
+	"timeSignature": [
+	  4,
+	  4
+	],
+	"name": ""
   },
   "tempo": [
-    {
-      "absoluteTime": 0,
-      "seconds": 0,
-      "bpm": 167.99993280002687
-    }
+	{
+	  "absoluteTime": 0,
+	  "seconds": 0,
+	  "bpm": 167.99993280002687
+	}
   ],
   "timeSignature": [
-    {
-      "absoluteTime": 0,
-      "seconds": 0,
-      "numerator": 4,
-      "denominator": 2,
-      "click": 24,
-      "notesQ": 8
-    }
+	{
+	  "absoluteTime": 0,
+	  "seconds": 0,
+	  "numerator": 4,
+	  "denominator": 2,
+	  "click": 24,
+	  "notesQ": 8
+	}
   ],
   "startTime": 0,
-  "duration": 5.803573750000003,
+  "duration": 9.375003750000003,
   "tracks": [
-    {
-      "startTime": 0,
-      "duration": 0,
-      "length": 0,
-      "notes": [],
-      "controlChanges": {},
-      "id": 0
-    },
-    {
-      "startTime": 1.4285720000000002,
-      "duration": 5.803573750000003,
-      "length": 7,
-      "notes": [
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 1.4285720000000002,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928574999999994
-        },
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 2.1428580000000004,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928575000000016
-        },
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 2.857144000000001,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928575000000016
-        },
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 3.571430000000001,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928575000000016
-        },
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 4.285716000000002,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928575000000016
-        },
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 5.000002000000002,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928575000000016
-        },
-        {
-          "name": "C3",
-          "midi": 48,
-          "time": 5.7142880000000025,
-          "velocity": 0.7874015748031497,
-          "duration": 0.08928575000000016
-        }
-      ],
-      "controlChanges": {},
-      "id": 1,
-      "name": "Close Grand 1",
-      "channelNumber": 0,
-      "isPercussion": false
-    }
+	{
+	  "startTime": 0,
+	  "duration": 0,
+	  "length": 0,
+	  "notes": [],
+	  "controlChanges": {},
+	  "id": 0
+	},
+	{
+	  "startTime": 1.4285720000000002,
+	  "duration": 9.375003750000003,
+	  "length": 12,
+	  "notes": [
+		{
+		  "name": "C3",
+		  "midi": 48,
+		  "time": 1.4285720000000002,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928574999999994
+		},
+		{
+		  "name": "C3",
+		  "midi": 48,
+		  "time": 2.1428580000000004,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "C3",
+		  "midi": 48,
+		  "time": 2.857144000000001,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "C3",
+		  "midi": 48,
+		  "time": 3.571430000000001,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "D3",
+		  "midi": 50,
+		  "time": 4.285716000000002,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "D3",
+		  "midi": 50,
+		  "time": 5.000002000000002,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "D3",
+		  "midi": 50,
+		  "time": 5.7142880000000025,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "D3",
+		  "midi": 50,
+		  "time": 6.428574000000003,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "E3",
+		  "midi": 52,
+		  "time": 7.142860000000003,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "E3",
+		  "midi": 52,
+		  "time": 7.857146000000004,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "E3",
+		  "midi": 52,
+		  "time": 8.571432000000003,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		},
+		{
+		  "name": "E3",
+		  "midi": 52,
+		  "time": 9.285718000000003,
+		  "velocity": 0.7874015748031497,
+		  "duration": 0.08928575000000016
+		}
+	  ],
+	  "controlChanges": {},
+	  "id": 1,
+	  "name": "Grand Piano 1",
+	  "channelNumber": 0,
+	  "isPercussion": false
+	}
   ]
 }

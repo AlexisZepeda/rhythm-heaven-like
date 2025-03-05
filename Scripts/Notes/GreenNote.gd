@@ -1,9 +1,8 @@
 extends BaseNote
 
-class_name RedNote
+class_name GreenNote
 
-
-@onready var test_attack_input = GameManager.inputs[1]
+@onready var test_attack_input = GameManager.inputs[2]
 
 
 func test_critical_hit(time: float, input: String) -> bool:

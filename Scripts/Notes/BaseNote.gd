@@ -6,7 +6,7 @@ class_name BaseNote
 var SPAWN_X: float = 1150.0 # Change to CONST
 const TARGET_X: float = 100
 
-enum STATE { HIT, MISS, BAD }
+enum STATE { NONE, HIT, MISS, BAD }
 
 var expected_time: float
 var created_time: float
@@ -17,13 +17,10 @@ var measure: int
 var duration: float
 var duration_in_beats
 var lane: String
-var note_type := ""
-var key_to_press := ""
-var key_to_press_2 := ""
-var set_back_check: bool = false
+var note_type: GameManager.NOTE_TYPES
 var expected_end_time: float = 0.0
 
-var note_state
+var note_state: STATE
 
 var critical_timing_window: float = 3.0 / 60 # 3 frames measured in 60fps
 var great_timing_window: float = 6.0 / 60 # 6 frames measured in 60fps
@@ -34,22 +31,24 @@ var metronome: Metronome
 
 
 func initialize():
+	note_state = STATE.NONE
 	self.global_position.x = SPAWN_X
+	self.global_position.y = 300
 
 
-func test_critical_hit(_time: float) -> bool:
+func test_critical_hit(_time: float, _input: String) -> bool:
 	return true
 
 
-func test_great_hit(_time: float) -> bool:
+func test_great_hit(_time: float, _input: String) -> bool:
 	return true
 
 
-func test_good_hit(_time: float) -> bool:
+func test_good_hit(_time: float, _input: String) -> bool:
 	return true
 
 
-func test_bad_hit(_time: float) -> bool:
+func test_bad_hit(_time: float, _input: String) -> bool:
 	return true
 
 
@@ -72,5 +71,9 @@ func miss() -> void:
 	note_state = STATE.MISS
 
 
-func get_state() -> String:
+func get_state() -> STATE:
 	return note_state
+
+
+func delete():
+	self.queue_free()
