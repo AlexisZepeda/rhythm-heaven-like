@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhhyt1mfyiv1p"]
+
+[ext_resource type="Script" path="res://Scripts/Metronome.gd" id="1_7omco"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+bus = &"Music"
+script = ExtResource("1_7omco")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_start_timer_timeout"]

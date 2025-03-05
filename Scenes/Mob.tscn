@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://bl1m1nm1n1237"]
+
+[ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_6u253"]
+[ext_resource type="Texture2D" uid="uid://b043uqsw4y0im" path="res://Sprites/adventurer-v1.5-Sheet.png" id="1_t4gje"]
+[ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="2_foxkq"]
+[ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="3_5tdhl"]
+[ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="4_llu7a"]
+[ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="5_6igt5"]
+
+[sub_resource type="Animation" id="Animation_6ltf1"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_si2in"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fiqah"]
+_data = {
+"Idle": SubResource("Animation_6ltf1"),
+"RESET": SubResource("Animation_si2in")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpm7l"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_foxkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5tdhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_llu7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6igt5")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Mob" type="Node2D" node_paths=PackedStringArray("animation_sprite")]
+script = ExtResource("1_6u253")
+animation_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_t4gje")
+hframes = 8
+vframes = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fiqah")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hpm7l")
+animation = &"Idle"

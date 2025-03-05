@@ -1,0 +1,108 @@
+[gd_scene load_steps=22 format=3 uid="uid://bcwe6w0nd1gpk"]
+
+[ext_resource type="PackedScene" uid="uid://bl1m1nm1n1237" path="res://Scenes/Mob.tscn" id="1_eftjt"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="2_omv3v"]
+[ext_resource type="Texture2D" uid="uid://c1kd4c6fmkm7p" path="res://Sprites/Individual Sprites/adventurer-attack1-00.png" id="3_e8lk8"]
+[ext_resource type="Texture2D" uid="uid://u76pn0ummn51" path="res://Sprites/Individual Sprites/adventurer-attack1-01.png" id="4_u83xc"]
+[ext_resource type="Texture2D" uid="uid://cpvi1wgffyqgw" path="res://Sprites/Individual Sprites/adventurer-attack1-02.png" id="5_8vkre"]
+[ext_resource type="Texture2D" uid="uid://cvsxvb48kd2of" path="res://Sprites/Individual Sprites/adventurer-attack1-03.png" id="6_ijp6s"]
+[ext_resource type="Texture2D" uid="uid://bjvmfm2lwst05" path="res://Sprites/Individual Sprites/adventurer-attack1-04.png" id="7_nnxen"]
+[ext_resource type="Texture2D" uid="uid://dkrlyc6346rbo" path="res://Sprites/Individual Sprites/adventurer-attack2-00.png" id="8_2mx71"]
+[ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="8_hdipv"]
+[ext_resource type="Texture2D" uid="uid://boq3had0pnyb4" path="res://Sprites/Individual Sprites/adventurer-attack2-01.png" id="9_81ydg"]
+[ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="9_ej6pw"]
+[ext_resource type="Texture2D" uid="uid://6wo0dpinwjoe" path="res://Sprites/Individual Sprites/adventurer-attack2-02.png" id="10_fwsmu"]
+[ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="10_jbpan"]
+[ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="11_4hf42"]
+[ext_resource type="Texture2D" uid="uid://br61lewmgxb5w" path="res://Sprites/Individual Sprites/adventurer-attack2-03.png" id="11_iiwkh"]
+[ext_resource type="Texture2D" uid="uid://fmn7shfp42wt" path="res://Sprites/Individual Sprites/adventurer-attack2-04.png" id="12_rqkcd"]
+[ext_resource type="Texture2D" uid="uid://bts85xqs2juvt" path="res://Sprites/Individual Sprites/adventurer-attack2-05.png" id="13_vnee7"]
+[ext_resource type="Texture2D" uid="uid://dvlllfsphvpej" path="res://Sprites/Individual Sprites/adventurer-hurt-00.png" id="14_pv5x1"]
+[ext_resource type="Texture2D" uid="uid://cfpjmyi4g7b61" path="res://Sprites/Individual Sprites/adventurer-hurt-01.png" id="15_f8trj"]
+[ext_resource type="Texture2D" uid="uid://wpfob86tjjoy" path="res://Sprites/Individual Sprites/adventurer-hurt-02.png" id="16_ohjyr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xm2gn"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e8lk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u83xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8vkre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ijp6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nnxen")
+}],
+"loop": false,
+"name": &"Attack1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2mx71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_81ydg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fwsmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_iiwkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rqkcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vnee7")
+}],
+"loop": true,
+"name": &"Attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_pv5x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_f8trj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ohjyr")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hdipv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ej6pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jbpan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4hf42")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Player" instance=ExtResource("1_eftjt")]
+script = ExtResource("2_omv3v")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xm2gn")
+animation = &"Hurt"

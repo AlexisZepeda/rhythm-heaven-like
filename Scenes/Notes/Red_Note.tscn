@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnrwns6ew2mjv"]
+
+[ext_resource type="Script" path="res://Scripts/Notes/RedNote.gd" id="1_s1o8t"]
+[ext_resource type="Texture2D" uid="uid://bhka7r2ge356x" path="res://icon.svg" id="2_jtfkv"]
+
+[node name="Red_Note" type="Node2D"]
+script = ExtResource("1_s1o8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_jtfkv")
