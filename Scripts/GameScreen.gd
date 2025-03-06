@@ -4,6 +4,7 @@ class_name GameScreen
 
 @export var metronome: AudioStreamPlayer
 @export var player: Mob
+@export var notes_queue: Node2D
 
 var notes_json: Dictionary
 
@@ -101,18 +102,18 @@ func create_note(expected_time, created_time, beat_of_note, note_type) -> BaseNo
 	var instance = null
 	if note_type == GameManager.NOTE_TYPES.TYPE_A:
 		instance = preload("res://Scenes/Notes/Tap_Note.tscn").instantiate()
-		add_child(instance)
+		notes_queue.add_child(instance)
 		_add_info_notes(instance, expected_time, created_time, beat_of_note, note_type)
 	
 	if note_type == GameManager.NOTE_TYPES.TYPE_B:
 		instance = preload("res://Scenes/Notes/Red_Note.tscn").instantiate()
-		add_child(instance)
+		notes_queue.add_child(instance)
 		
 		_add_info_notes(instance, expected_time, created_time, beat_of_note, note_type)
 	
 	if note_type == GameManager.NOTE_TYPES.TYPE_C:
 		instance = preload("res://Scenes/Notes/Green_Note.tscn").instantiate()
-		add_child(instance)
+		notes_queue.add_child(instance)
 		
 		_add_info_notes(instance, expected_time, created_time, beat_of_note, note_type)
 		

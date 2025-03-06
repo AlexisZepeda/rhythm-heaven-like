@@ -48,4 +48,7 @@ func _process(_delta):
 	
 	if is_instance_valid(metronome):
 		var t = ((1.0 - (expected_time - metronome.song_position)) / 1.0)
-		self.position.x = lerp(SPAWN_X, TARGET_X, t)
+		if t < 0:
+			return
+		print(t)
+		self.global_position.x = lerp(SPAWN_X, TARGET_X, t)

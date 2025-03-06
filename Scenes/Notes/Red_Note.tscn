@@ -1,11 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnrwns6ew2mjv"]
+[gd_scene load_steps=13 format=3 uid="uid://dnrwns6ew2mjv"]
 
 [ext_resource type="Script" path="res://Scripts/Notes/RedNote.gd" id="1_s1o8t"]
 [ext_resource type="Texture2D" uid="uid://bhka7r2ge356x" path="res://icon.svg" id="2_jtfkv"]
+[ext_resource type="Script" path="res://Scripts/Mob.gd" id="3_xeh8m"]
+[ext_resource type="Texture2D" uid="uid://b26c7ej10hpr4" path="res://Sprites/Monsters/monsters.png" id="4_6yc3r"]
+[ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="5_fgmys"]
+[ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="6_tg03l"]
+[ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="7_mqb7h"]
+[ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="8_4agwp"]
+
+[sub_resource type="Animation" id="Animation_6ltf1"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_si2in"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fiqah"]
+_data = {
+"Idle": SubResource("Animation_6ltf1"),
+"RESET": SubResource("Animation_si2in")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1jpv"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fgmys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tg03l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mqb7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4agwp")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Red_Note" type="Node2D"]
 script = ExtResource("1_s1o8t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_jtfkv")
+
+[node name="Mob" type="Node2D" parent="." node_paths=PackedStringArray("animation_sprite")]
+script = ExtResource("3_xeh8m")
+animation_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mob"]
+texture = ExtResource("4_6yc3r")
+hframes = 12
+vframes = 13
+frame = 78
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mob"]
+libraries = {
+"": SubResource("AnimationLibrary_fiqah")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_f1jpv")
+animation = &"Idle"

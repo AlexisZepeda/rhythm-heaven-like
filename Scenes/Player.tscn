@@ -134,4 +134,4 @@ script = ExtResource("2_omv3v")
 [node name="AnimatedSprite2D" parent="." index="2"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xm2gn")
-animation = &"Attack3"
+offset = Vector2(0, -18)

@@ -2,6 +2,8 @@ extends Mob
 
 class_name Player
 
+var tween: Tween
+
 
 func attack(note_type: GameManager.NOTE_TYPES):
 	match note_type:
@@ -19,3 +21,13 @@ func hurt():
 	animation_sprite.play("Hurt")
 	await animation_sprite.animation_finished
 	animation_sprite.play("Idle")
+
+
+func _on_whole_note_emitted():
+	if tween and tween.is_running():
+		tween.kill()
+	
+	tween = get_tree().create_tween()
+	var initial_scale: Vector2 = self.scale
+	tween.tween_property(self, "scale:y", self.scale.y - 0.25, JsonParser.shortest_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale:y", initial_scale.y, JsonParser.shortest_duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)

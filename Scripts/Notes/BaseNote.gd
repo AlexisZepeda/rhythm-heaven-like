@@ -3,8 +3,8 @@ extends Node
 
 class_name BaseNote
 
-var SPAWN_X: float = 1150.0 # Change to CONST
-const TARGET_X: float = 100
+var SPAWN_X: float = 500 # Change to CONST
+const TARGET_X: float = 150
 
 enum STATE { NONE, HIT, MISS, BAD }
 
@@ -33,7 +33,7 @@ var metronome: Metronome
 func initialize():
 	note_state = STATE.NONE
 	self.global_position.x = SPAWN_X
-	self.global_position.y = 300
+	self.global_position.y = 300 - 32
 
 
 func test_critical_hit(_time: float, _input: String) -> bool:

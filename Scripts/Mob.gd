@@ -6,7 +6,7 @@ class_name Mob
 
 func _ready():
 	GameManager.WHOLE_NOTE_EMITTED.connect(_on_whole_note_emitted)
-	animation_sprite.play("Idle")
+	#animation_sprite.play("Idle")
 	animation_sprite.speed_scale = JsonParser.midi_bpm / 60 * 2
 
 
