@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck0us11rgb1kx"]
+
+[ext_resource type="PackedScene" uid="uid://bl1m1nm1n1237" path="res://Scenes/Entities/Mob.tscn" id="1_h5u41"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="2_73x64"]
+[ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="3_h7gk7"]
+[ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="4_7v718"]
+[ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="5_nlcf1"]
+[ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="6_xtm0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2rmg"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h7gk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7v718")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nlcf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xtm0d")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Enemy" instance=ExtResource("1_h5u41")]
+script = ExtResource("2_73x64")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_v2rmg")

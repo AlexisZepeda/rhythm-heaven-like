@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://c305axxkgb1wl"]
+
+[ext_resource type="Script" path="res://Scripts/Notes/TypeCNote.gd" id="1_10ox4"]
+[ext_resource type="Texture2D" uid="uid://cmuile8rhipfo" path="res://Sprites/Monsters/TypeC.png" id="2_ka12w"]
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="2_st53t"]
+[ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="4_nc5l5"]
+[ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="5_5a4n4"]
+[ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="6_w6cn2"]
+[ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="7_wqq4i"]
+
+[sub_resource type="Animation" id="Animation_6ltf1"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_si2in"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fiqah"]
+_data = {
+"Idle": SubResource("Animation_6ltf1"),
+"RESET": SubResource("Animation_si2in")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwkp7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nc5l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5a4n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w6cn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wqq4i")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="TypeC" type="Node2D" node_paths=PackedStringArray("enemy")]
+scale = Vector2(2, 2)
+script = ExtResource("1_10ox4")
+enemy = NodePath("Enemy")
+
+[node name="Enemy" type="Node2D" parent="." node_paths=PackedStringArray("animation_sprite")]
+script = ExtResource("2_st53t")
+animation_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("2_ka12w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+libraries = {
+"": SubResource("AnimationLibrary_fiqah")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_iwkp7")
+animation = &"Idle"
