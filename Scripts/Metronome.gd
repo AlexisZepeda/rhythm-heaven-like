@@ -33,7 +33,7 @@ func _report_beat():
 		GameManager.BEAT_EMITTED.emit(song_position_in_beats, song_position)
 		if song_position_in_beats % 16 == 0:
 			GameManager.WHOLE_NOTE_EMITTED.emit()
-		if song_position_in_beats % 16 == 8:
+		if song_position_in_beats % 8 == 1:
 			GameManager.HALF_NOTE_EMITTED.emit()
 		if song_position_in_beats % 4 == 1:
 			GameManager.QUARTER_NOTE_EMITTED.emit()

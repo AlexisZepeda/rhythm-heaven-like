@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhhlomei8arvj"
+path="res://.godot/imported/Hit SFX 2.ogg-b306db7b6047075e8c5c936ab56a322d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/Hit SFX 2.ogg"
+dest_files=["res://.godot/imported/Hit SFX 2.ogg-b306db7b6047075e8c5c936ab56a322d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

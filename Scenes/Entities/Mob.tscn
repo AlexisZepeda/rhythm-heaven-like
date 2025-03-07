@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bl1m1nm1n1237"]
+[gd_scene load_steps=12 format=3 uid="uid://bl1m1nm1n1237"]
 
 [ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_6u253"]
 [ext_resource type="Texture2D" uid="uid://b043uqsw4y0im" path="res://Sprites/adventurer-v1.5-Sheet.png" id="1_t4gje"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="3_5tdhl"]
 [ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="4_llu7a"]
 [ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="5_6igt5"]
+[ext_resource type="AudioStream" uid="uid://cu2mugtyqpa1c" path="res://Sounds/SFX/Hit SFX.ogg" id="7_7b0wd"]
 
 [sub_resource type="Animation" id="Animation_6ltf1"]
 resource_name = "Idle"
@@ -40,9 +41,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Mob" type="Node2D" node_paths=PackedStringArray("animation_sprite")]
+[node name="Mob" type="Node2D" node_paths=PackedStringArray("animation_sprite", "sfx")]
 script = ExtResource("1_6u253")
 animation_sprite = NodePath("AnimatedSprite2D")
+sfx = NodePath("SFX")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -58,3 +60,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hpm7l")
 animation = &"Idle"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7b0wd")
+bus = &"SFX"

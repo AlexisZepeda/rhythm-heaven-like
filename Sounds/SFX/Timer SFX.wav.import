@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dc2goxtpc85lx"
-path="res://.godot/imported/Timer SFX.wav-8c045f0ec8e2aec26969237dd974f2a1.sample"
+path="res://.godot/imported/Timer SFX.wav-052e3afece9b48c652a0099655f43252.sample"
 
 [deps]
 
-source_file="res://Sounds/Timer SFX.wav"
-dest_files=["res://.godot/imported/Timer SFX.wav-8c045f0ec8e2aec26969237dd974f2a1.sample"]
+source_file="res://Sounds/SFX/Timer SFX.wav"
+dest_files=["res://.godot/imported/Timer SFX.wav-052e3afece9b48c652a0099655f43252.sample"]
 
 [params]
 

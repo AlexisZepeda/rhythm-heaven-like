@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/GameScreen.gd" id="1_je2at"]
 [ext_resource type="PackedScene" uid="uid://dhhyt1mfyiv1p" path="res://Scenes/Metronome.tscn" id="2_3xogo"]
 [ext_resource type="AudioStream" uid="uid://bqxw6c4wnq661" path="res://Sounds/Battle Theme #2 Ogg.ogg" id="3_ojm6g"]
-[ext_resource type="AudioStream" uid="uid://dc2goxtpc85lx" path="res://Sounds/Timer SFX.wav" id="5_kqhuh"]
+[ext_resource type="AudioStream" uid="uid://dc2goxtpc85lx" path="res://Sounds/SFX/Timer SFX.wav" id="5_kqhuh"]
 [ext_resource type="PackedScene" uid="uid://bcwe6w0nd1gpk" path="res://Scenes/Entities/Player.tscn" id="5_mclt4"]
 [ext_resource type="PackedScene" uid="uid://c30aim0dfdjh" path="res://Scenes/Portal.tscn" id="6_gd1d6"]
 

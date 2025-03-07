@@ -77,6 +77,7 @@ func get_state() -> STATE:
 
 func delete():
 	if note_state == STATE.HIT:
+		self.position.x = TARGET_X
 		enemy.hurt()
 		await enemy.HURT_FINISHED
 	
