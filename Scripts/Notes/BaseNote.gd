@@ -6,14 +6,14 @@ class_name BaseNote
 @export var enemy: Enemy
 
 var SPAWN_X: float = 500 # Change to CONST
-const TARGET_X: float = 150
+const TARGET_X: float = 150.0
+const destroy_position_x: float = 100.0
 
 enum STATE { NONE, HIT, MISS, BAD }
 
 var expected_time: float
 var created_time: float
 var total_length: float = 0
-var destroy_position_x: float = 30.0
 var beat_of_note
 var duration: float
 var duration_in_beats

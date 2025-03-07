@@ -28,9 +28,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_h5u41")]
+[node name="Enemy" instance=ExtResource("1_h5u41")]
 script = ExtResource("2_73x64")
-animation_player = NodePath("AnimationPlayer")
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_v2rmg")

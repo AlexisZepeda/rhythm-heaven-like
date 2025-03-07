@@ -4,6 +4,7 @@ class_name Mob
 
 @export var animation_sprite: AnimatedSprite2D
 @export var sfx: AudioStreamPlayer
+@export var animation_player: AnimationPlayer
 
 func _ready():
 	GameManager.HALF_NOTE_EMITTED.connect(_on_whole_note_emitted)

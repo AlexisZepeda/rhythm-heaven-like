@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl1m1nm1n1237"]
+[gd_scene load_steps=15 format=3 uid="uid://bl1m1nm1n1237"]
 
 [ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_6u253"]
 [ext_resource type="Texture2D" uid="uid://b043uqsw4y0im" path="res://Sprites/adventurer-v1.5-Sheet.png" id="1_t4gje"]
 [ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="2_foxkq"]
 [ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="3_5tdhl"]
+[ext_resource type="Shader" path="res://Shaders/MobDamageFlash.gdshader" id="3_liv1l"]
 [ext_resource type="Texture2D" uid="uid://dwg32kubrfb5y" path="res://Sprites/Individual Sprites/adventurer-idle-02.png" id="4_llu7a"]
 [ext_resource type="Texture2D" uid="uid://c6rcs0wrtpbic" path="res://Sprites/Individual Sprites/adventurer-idle-03.png" id="5_6igt5"]
 [ext_resource type="AudioStream" uid="uid://cu2mugtyqpa1c" path="res://Sounds/SFX/Hit SFX.ogg" id="7_7b0wd"]
@@ -13,12 +14,45 @@ resource_name = "Idle"
 
 [sub_resource type="Animation" id="Animation_si2in"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/scalar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7od4n"]
+resource_name = "Flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/scalar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fiqah"]
 _data = {
+"Flash": SubResource("Animation_7od4n"),
 "Idle": SubResource("Animation_6ltf1"),
 "RESET": SubResource("Animation_si2in")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia510"]
+shader = ExtResource("3_liv1l")
+shader_parameter/scalar = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hpm7l"]
 resource_local_to_scene = true
@@ -41,10 +75,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Mob" type="Node2D" node_paths=PackedStringArray("animation_sprite", "sfx")]
+[node name="Mob" type="Node2D" node_paths=PackedStringArray("animation_sprite", "sfx", "animation_player")]
 script = ExtResource("1_6u253")
 animation_sprite = NodePath("AnimatedSprite2D")
 sfx = NodePath("SFX")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -58,6 +93,7 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ia510")
 sprite_frames = SubResource("SpriteFrames_hpm7l")
 animation = &"Idle"
 

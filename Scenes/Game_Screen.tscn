@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/GameScreen.gd" id="1_je2at"]
 [ext_resource type="PackedScene" uid="uid://dhhyt1mfyiv1p" path="res://Scenes/Metronome.tscn" id="2_3xogo"]
 [ext_resource type="AudioStream" uid="uid://bqxw6c4wnq661" path="res://Sounds/Battle Theme #2 Ogg.ogg" id="3_ojm6g"]
-[ext_resource type="AudioStream" uid="uid://dc2goxtpc85lx" path="res://Sounds/SFX/Timer SFX.wav" id="5_kqhuh"]
 [ext_resource type="PackedScene" uid="uid://bcwe6w0nd1gpk" path="res://Scenes/Entities/Player.tscn" id="5_mclt4"]
 [ext_resource type="PackedScene" uid="uid://c30aim0dfdjh" path="res://Scenes/Portal.tscn" id="6_gd1d6"]
+[ext_resource type="PackedScene" uid="uid://g3l572ie1kmb" path="res://Scenes/Map/Map.tscn" id="6_tj7sn"]
 
 [node name="GameScreen" type="Node" node_paths=PackedStringArray("metronome", "player", "notes_queue")]
 script = ExtResource("1_je2at")
@@ -16,11 +16,10 @@ notes_queue = NodePath("Notes Queue")
 [node name="Metronome" parent="." instance=ExtResource("2_3xogo")]
 stream = ExtResource("3_ojm6g")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_kqhuh")
-
 [node name="Player" parent="." instance=ExtResource("5_mclt4")]
-position = Vector2(100, 300)
+position = Vector2(100, 305)
+
+[node name="Map" parent="." instance=ExtResource("6_tj7sn")]
 
 [node name="Notes Queue" type="Node2D" parent="."]
 

@@ -4,8 +4,6 @@ class_name Enemy
 
 signal HURT_FINISHED
 
-@export var animation_player: AnimationPlayer
-
 var tween: Tween
 var is_playing: bool = false
 

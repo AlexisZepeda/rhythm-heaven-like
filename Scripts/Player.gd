@@ -19,6 +19,7 @@ func attack(note_type: GameManager.NOTE_TYPES):
 
 func hurt():
 	animation_sprite.play("Hurt")
+	animation_player.play("Flash")
 	await animation_sprite.animation_finished
 	animation_sprite.play("Idle")
 
