@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bcwe6w0nd1gpk"]
+[gd_scene load_steps=24 format=3 uid="uid://bcwe6w0nd1gpk"]
 
 [ext_resource type="PackedScene" uid="uid://bl1m1nm1n1237" path="res://Scenes/Entities/Mob.tscn" id="1_eftjt"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_omv3v"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cvsxvb48kd2of" path="res://Sprites/Individual Sprites/adventurer-attack1-03.png" id="6_ijp6s"]
 [ext_resource type="Texture2D" uid="uid://bjvmfm2lwst05" path="res://Sprites/Individual Sprites/adventurer-attack1-04.png" id="7_nnxen"]
 [ext_resource type="Texture2D" uid="uid://dkrlyc6346rbo" path="res://Sprites/Individual Sprites/adventurer-attack2-00.png" id="8_2mx71"]
-[ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="8_hdipv"]
 [ext_resource type="Texture2D" uid="uid://boq3had0pnyb4" path="res://Sprites/Individual Sprites/adventurer-attack2-01.png" id="9_81ydg"]
 [ext_resource type="Texture2D" uid="uid://6wo0dpinwjoe" path="res://Sprites/Individual Sprites/adventurer-attack2-02.png" id="10_fwsmu"]
 [ext_resource type="Texture2D" uid="uid://br61lewmgxb5w" path="res://Sprites/Individual Sprites/adventurer-attack2-03.png" id="11_iiwkh"]
@@ -109,7 +108,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_hdipv")
+"texture": ExtResource("8_2mx71")
 }],
 "loop": true,
 "name": &"Idle",

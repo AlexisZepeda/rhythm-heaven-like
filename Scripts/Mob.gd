@@ -9,7 +9,7 @@ class_name Mob
 func _ready():
 	GameManager.HALF_NOTE_EMITTED.connect(_on_whole_note_emitted)
 	#animation_sprite.play("Idle")
-	animation_sprite.speed_scale = float(JsonParser.midi_bpm) / 60.0 * 2.0
+	animation_sprite.speed_scale = float(JsonParser.midi_bpm) / 60.0 * 2
 
 
 func attack(_note_type: GameManager.NOTE_TYPES):

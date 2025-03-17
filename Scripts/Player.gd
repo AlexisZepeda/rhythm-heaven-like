@@ -3,6 +3,16 @@ extends Mob
 class_name Player
 
 var tween: Tween
+var current_health: int:
+	set(value):
+		current_health = value
+var max_health: int = 6
+
+
+func _ready():
+	super._ready()
+	current_health = max_health
+	GameManager.CREATE_HEALTH.emit(current_health)
 
 
 func attack(note_type: GameManager.NOTE_TYPES):
@@ -13,15 +23,18 @@ func attack(note_type: GameManager.NOTE_TYPES):
 			animation_sprite.play("Attack2")
 		GameManager.NOTE_TYPES.TYPE_C:
 			animation_sprite.play("Attack3")
-	await animation_sprite.animation_finished
-	animation_sprite.play("Idle")
+	#await animation_sprite.animation_finished
+	#animation_sprite.play("Idle")
 
 
 func hurt():
 	animation_sprite.play("Hurt")
 	animation_player.play("Flash")
+	current_health -= 1
+	GameManager.LOST_HEALTH.emit()
 	await animation_sprite.animation_finished
 	animation_sprite.play("Idle")
+
 
 
 func animate_tween_on_beat():
