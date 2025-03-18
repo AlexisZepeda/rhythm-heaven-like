@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyt1bak1i5pf5"]
+[gd_scene load_steps=8 format=3 uid="uid://dyt1bak1i5pf5"]
 
 [ext_resource type="Script" path="res://Scripts/GameScreen.gd" id="1_je2at"]
 [ext_resource type="PackedScene" uid="uid://dhhyt1mfyiv1p" path="res://Scenes/Metronome.tscn" id="2_3xogo"]
@@ -6,12 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://bcwe6w0nd1gpk" path="res://Scenes/Entities/Player.tscn" id="5_mclt4"]
 [ext_resource type="PackedScene" uid="uid://c30aim0dfdjh" path="res://Scenes/Portal.tscn" id="6_gd1d6"]
 [ext_resource type="PackedScene" uid="uid://g3l572ie1kmb" path="res://Scenes/Map/Map.tscn" id="6_tj7sn"]
+[ext_resource type="PackedScene" uid="uid://ctwu1mhpvu6jt" path="res://Scenes/UI/Heart_Container.tscn" id="7_r8vkm"]
 
 [node name="GameScreen" type="Node" node_paths=PackedStringArray("metronome", "player", "notes_queue")]
 script = ExtResource("1_je2at")
 metronome = NodePath("Metronome")
 player = NodePath("Player")
 notes_queue = NodePath("Notes Queue")
+
+[node name="Control" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_right = 44.0
+offset_bottom = 16.0
+
+[node name="HeartContainer" parent="Control" instance=ExtResource("7_r8vkm")]
+layout_mode = 0
 
 [node name="Metronome" parent="." instance=ExtResource("2_3xogo")]
 stream = ExtResource("3_0ewlg")

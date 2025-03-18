@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Notes/TypeCNote.gd" id="1_10ox4"]
 [ext_resource type="Texture2D" uid="uid://cmuile8rhipfo" path="res://Sprites/Monsters/TypeC.png" id="2_ka12w"]
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="2_st53t"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemy.gd" id="2_st53t"]
 [ext_resource type="AudioStream" uid="uid://b6j1i6y14ehyd" path="res://Sounds/SFX/Hit SFX 3.ogg" id="8_t0vsl"]
 
 [sub_resource type="Animation" id="Animation_6ltf1"]

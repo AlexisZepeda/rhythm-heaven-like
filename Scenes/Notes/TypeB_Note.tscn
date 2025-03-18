@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dnrwns6ew2mjv"]
 
 [ext_resource type="Script" path="res://Scripts/Notes/TypeBNote.gd" id="1_5j2a3"]
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="3_w6xd2"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemy.gd" id="3_w6xd2"]
 [ext_resource type="Texture2D" uid="uid://bh6w6gg2umkfp" path="res://Sprites/Monsters/TypeB.png" id="4_hfhsu"]
 [ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="5_vy3t8"]
 [ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="6_usns3"]

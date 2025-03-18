@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bl1m1nm1n1237"]
 
-[ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_6u253"]
+[ext_resource type="Script" path="res://Scripts/Entities/Mob.gd" id="1_n7oc6"]
 [ext_resource type="Texture2D" uid="uid://b043uqsw4y0im" path="res://Sprites/adventurer-v1.5-Sheet.png" id="1_t4gje"]
 [ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="2_foxkq"]
 [ext_resource type="Texture2D" uid="uid://4hfqd1cduc3h" path="res://Sprites/Individual Sprites/adventurer-idle-01.png" id="3_5tdhl"]
@@ -76,7 +76,7 @@ animations = [{
 }]
 
 [node name="Mob" type="Node2D" node_paths=PackedStringArray("animation_sprite", "sfx", "animation_player")]
-script = ExtResource("1_6u253")
+script = ExtResource("1_n7oc6")
 animation_sprite = NodePath("AnimatedSprite2D")
 sfx = NodePath("SFX")
 animation_player = NodePath("AnimationPlayer")

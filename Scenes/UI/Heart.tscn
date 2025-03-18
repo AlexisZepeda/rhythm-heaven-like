@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctykgwmujaqk"]
+[gd_scene load_steps=4 format=3 uid="uid://ctykgwmujaqk"]
 
+[ext_resource type="Script" path="res://Scripts/UI/Heart.gd" id="1_6smec"]
 [ext_resource type="Texture2D" uid="uid://b5ckj7svxyxjx" path="res://Sprites/UI/Heart.png" id="1_yfbe8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpl4t"]
 
-[node name="Panel" type="PanelContainer"]
+[node name="Heart" type="PanelContainer" node_paths=PackedStringArray("heart_sprite")]
 custom_minimum_size = Vector2(16, 16)
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,7 +21,9 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dpl4t")
+script = ExtResource("1_6smec")
+heart_sprite = NodePath("HeartSprite")
 
-[node name="Heart" type="Sprite2D" parent="."]
+[node name="HeartSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_yfbe8")
 centered = false

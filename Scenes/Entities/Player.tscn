@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcwe6w0nd1gpk"]
+[gd_scene load_steps=31 format=3 uid="uid://bcwe6w0nd1gpk"]
 
 [ext_resource type="PackedScene" uid="uid://bl1m1nm1n1237" path="res://Scenes/Entities/Mob.tscn" id="1_eftjt"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="2_omv3v"]
+[ext_resource type="Script" path="res://Scripts/Entities/Player.gd" id="2_ch4sy"]
 [ext_resource type="Texture2D" uid="uid://c1kd4c6fmkm7p" path="res://Sprites/Individual Sprites/adventurer-attack1-00.png" id="3_e8lk8"]
 [ext_resource type="Texture2D" uid="uid://u76pn0ummn51" path="res://Sprites/Individual Sprites/adventurer-attack1-01.png" id="4_u83xc"]
 [ext_resource type="Texture2D" uid="uid://cpvi1wgffyqgw" path="res://Sprites/Individual Sprites/adventurer-attack1-02.png" id="5_8vkre"]
@@ -22,6 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://b5vylgarxdfqj" path="res://Sprites/Individual Sprites/adventurer-attack3-03.png" id="17_4tog5"]
 [ext_resource type="Texture2D" uid="uid://tcg8g7u3wogs" path="res://Sprites/Individual Sprites/adventurer-attack3-04.png" id="18_atbof"]
 [ext_resource type="Texture2D" uid="uid://ergdmh4s71t8" path="res://Sprites/Individual Sprites/adventurer-attack3-05.png" id="19_p7dx7"]
+[ext_resource type="Texture2D" uid="uid://dcpwavqbl470h" path="res://Sprites/Individual Sprites/adventurer-die-00.png" id="20_4ew1d"]
+[ext_resource type="Texture2D" uid="uid://cqm1qg3jjhlic" path="res://Sprites/Individual Sprites/adventurer-die-01.png" id="21_whf11"]
+[ext_resource type="Texture2D" uid="uid://byu2p3ik7614j" path="res://Sprites/Individual Sprites/adventurer-die-02.png" id="22_aqsrf"]
+[ext_resource type="Texture2D" uid="uid://bdjkj4vfjvhyr" path="res://Sprites/Individual Sprites/adventurer-die-03.png" id="23_eo0pb"]
+[ext_resource type="Texture2D" uid="uid://1kvy2ygyli4a" path="res://Sprites/Individual Sprites/adventurer-die-04.png" id="24_o0hxy"]
+[ext_resource type="Texture2D" uid="uid://cth03vosuq781" path="res://Sprites/Individual Sprites/adventurer-die-05.png" id="25_5jmq8"]
+[ext_resource type="Texture2D" uid="uid://ckospc86h3fob" path="res://Sprites/Individual Sprites/adventurer-die-06.png" id="26_irmo1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xm2gn"]
 resource_local_to_scene = true
@@ -94,6 +101,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_4ew1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_whf11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_aqsrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_eo0pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_o0hxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5jmq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_irmo1")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_pv5x1")
 }, {
 "duration": 1.0,
@@ -116,7 +149,7 @@ animations = [{
 }]
 
 [node name="Player" instance=ExtResource("1_eftjt")]
-script = ExtResource("2_omv3v")
+script = ExtResource("2_ch4sy")
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 scale = Vector2(2, 2)

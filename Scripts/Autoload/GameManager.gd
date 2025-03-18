@@ -13,3 +13,5 @@ signal WHOLE_NOTE_EMITTED
 # Health signals
 signal LOST_HEALTH
 signal CREATE_HEALTH(max_health)
+
+signal GAME_OVER

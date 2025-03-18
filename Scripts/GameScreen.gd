@@ -15,6 +15,7 @@ func _ready():
 	if notes_json != null:
 		notes_json = JsonParser.notes
 	GameManager.BEAT_EMITTED.connect(_on_beat_emitted)
+	GameManager.GAME_OVER.connect(_on_game_over)
 	metronome.play_with_beat_offset(16)
 
 
@@ -127,3 +128,8 @@ func _add_info_notes(instance, expected_time, created_time, beat_of_note, note_t
 	instance.note_type = note_type
 	instance.metronome = metronome
 	instance.initialize()
+
+
+func _on_game_over():
+	metronome.stop()
+	player.die()

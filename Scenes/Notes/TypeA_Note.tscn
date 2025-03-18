@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cuyovbxqk3cdb"]
 
 [ext_resource type="Script" path="res://Scripts/Notes/TypeANote.gd" id="1_2xvr4"]
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="3_kjkln"]
+[ext_resource type="Script" path="res://Scripts/Entities/Enemy.gd" id="2_qs7hn"]
 [ext_resource type="Shader" path="res://Shaders/MobDamageFlash.gdshader" id="3_lxmqs"]
 [ext_resource type="Texture2D" uid="uid://cw06f5vnoky5n" path="res://Sprites/Monsters/TypeA.png" id="4_rl68q"]
 [ext_resource type="Texture2D" uid="uid://bijtkfix381it" path="res://Sprites/Individual Sprites/adventurer-idle-00.png" id="5_xa4c8"]
@@ -108,7 +108,7 @@ script = ExtResource("1_2xvr4")
 enemy = NodePath("Enemy")
 
 [node name="Enemy" type="Node2D" parent="." node_paths=PackedStringArray("animation_sprite", "sfx", "animation_player")]
-script = ExtResource("3_kjkln")
+script = ExtResource("2_qs7hn")
 animation_sprite = NodePath("AnimatedSprite2D")
 sfx = NodePath("AudioStreamPlayer")
 animation_player = NodePath("AnimationPlayer")
